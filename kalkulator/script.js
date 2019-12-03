@@ -1,17 +1,19 @@
 window.onload = function(){
     let policz = document.getElementsByClassName("licz");
     for (let i = 0; i < policz.length;i++){
-        policz[i].onclick = licz(this.value);
+        policz[i].onclick = function(){
+            licz(this.value);
     }
 }
-
+}
 function licz(operacja){
     
     let liczba1 = parseFloat(document.getElementById("liczba1").value);
     let liczba2 = parseFloat(document.getElementById("liczba2").value);
-    if(operacja == '+'){
+    /*
+    if(operacja == "+"){
         write_wynik(liczba1 + liczba2)
-        document.getElementById("wynik").innerHTML = x;
+
     }
     if(operacja == "-"){
         write_wynik(liczba1 - liczba2)
@@ -22,13 +24,22 @@ function licz(operacja){
     if(operacja == "/"){
         write_wynik(liczba1 / liczba2)
     }
-
+*/
     switch(operacja){
         case "+":
             write_wynik(liczba1 + liczba2);
             break;
         case "-":
             write_wynik(liczba1 - liczba2);
+            break;
+        case "x":
+            write_wynik(liczba1 * liczba2);
+            break;
+        case "/":
+            write_wynik(liczba1 * liczba2);
+            break;
+        case "pow":
+            write_wynik(Math.pow(liczba1,liczba2));
             break;
     }
 }
